@@ -1,0 +1,123 @@
+.home {
+  padding: 4rem 0 0 8rem;
+  color: $white-color;
+  font-family: 'Clash Display', sans-serif;
+  display: flex;
+  border-bottom: $light-line;
+  position: relative;
+
+  &__left--bg {
+    @include bg;
+    top: -20%;
+    left: 6%;
+  }
+
+  &__left {
+    flex-basis: 50%;
+  }
+  &__white--star {
+    margin: 2rem 0 8rem 7rem;
+  }
+
+  &__header--1 {
+    position: relative;
+  }
+
+  &__dark--star1 {
+    position: absolute;
+    top: -60%;
+    right: 0%;
+  }
+
+  & h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    display: flex;
+    & div {
+      position: relative;
+
+      img {
+        position: absolute;
+        top: -50%;
+        left: 35%;
+      }
+    }
+  }
+
+  &__header--2 {
+    display: flex;
+    justify-content: flex-start;
+  }
+  & h2 {
+    font-size: 8rem;
+    font-weight: 700;
+    & span {
+      color: $pink-color;
+    }
+  }
+  &__paragraph {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 2rem;
+    font-weight: 400;
+    width: 75%;
+    margin: 2.5rem 0 4rem;
+  }
+
+  &__timer {
+    margin-top: 6rem;
+    font-family: Unica One;
+    font-size: 6.4rem;
+    font-weight: 400;
+    & span {
+      font-family: 'Unica One', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+    &--box {
+      position: relative;
+    }
+  }
+  &__dark--star2 {
+    position: absolute;
+    right: 40%;
+  }
+
+  &__right--bg {
+    @include bg;
+    top: 5%;
+    right: 0%;
+  }
+
+  &__right {
+    flex-basis: 50%;
+    & h3 {
+      font-family: 'Montserrat', sans-serif;
+
+      font-size: 3rem;
+      font-style: italic;
+      font-weight: 700;
+      display: flex;
+      margin-bottom: 3rem;
+
+      & div {
+        position: relative;
+
+        & img {
+          position: absolute;
+          bottom: -55%;
+          right: 0;
+        }
+      }
+    }
+    & figure {
+      width: 100%;
+      height: 85vh;
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
