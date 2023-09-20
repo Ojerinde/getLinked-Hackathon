@@ -15,5 +15,6 @@ html {
 
 body {
   background-color: #150e28;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }

@@ -1,0 +1,52 @@
+.prizes {
+  padding: 6rem 12rem;
+  background: #130d24;
+  display: flex;
+  justify-content: space-between;
+
+  &__left {
+    flex-basis: 45%;
+    position: relative;
+
+    & img {
+      width: 100%;
+    }
+    &--bg {
+      @include bg;
+      top: 0%;
+      left: -5%;
+      width: 60rem;
+      height: 60rem;
+    }
+  }
+  &__right {
+    flex-basis: 50%;
+    position: relative;
+
+    &--bg {
+      @include bg;
+      top: 25%;
+      left: 70%;
+      width: 60rem;
+      height: 60rem;
+    }
+
+    &--box {
+      width: 65%;
+      margin: 0 auto 6rem;
+    }
+    &--description {
+      margin-top: 2rem;
+      color: $white-color;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 2.39rem;
+    }
+    & figure {
+      width: 100%;
+      & img {
+        width: 100%;
+      }
+    }
+  }
+}
