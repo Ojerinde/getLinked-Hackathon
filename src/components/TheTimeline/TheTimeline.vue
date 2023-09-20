@@ -1,7 +1,6 @@
 <script setup>
 import LeftTimeline from './LeftTimeline.vue'
-import RightTimeline from './RightTimeline.vue'
-
+import OtherSideTimeline from './OtherSideTimeline.vue'
 const lists = [
   {
     heading: 'Hackathon Announcement',
@@ -55,13 +54,13 @@ const lists = [
 
     <ul>
       <template v-for="list in lists" :key="list.id">
-        <right-timeline
+        <other-side-timeline
           v-if="list.id % 2 !== 0"
           :heading="list.heading"
           :description="list.description"
           :date="list.date"
           :step="list.id"
-        ></right-timeline>
+        ></other-side-timeline>
         <left-timeline
           v-else
           :heading="list.heading"

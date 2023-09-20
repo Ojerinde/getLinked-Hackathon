@@ -1,22 +1,22 @@
 <script setup>
-defineProps({
-  heading: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  step: {
-    type: String,
-    required: true
-  },
-  date: {
-    type: String,
-    required: true
-  }
-})
+  defineProps({
+    heading: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
+    },
+    step: {
+      type: String,
+      required: true
+    },
+    date: {
+      type: String,
+      required: true
+    }
+  })
 </script>
 <template>
   <div class="rTimeline">
