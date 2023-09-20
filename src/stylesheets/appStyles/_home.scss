@@ -13,7 +13,7 @@
   }
 
   &__left {
-    flex-basis: 50%;
+    flex-basis: 45%;
   }
   &__white--star {
     margin: 2rem 0 8rem 7rem;
@@ -51,6 +51,7 @@
   & h2 {
     font-size: 8rem;
     font-weight: 700;
+    display: flex;
     & span {
       color: $pink-color;
     }
@@ -63,9 +64,9 @@
     width: 75%;
     margin: 2.5rem 0 4rem;
   }
-
   &__timer {
     margin-top: 6rem;
+    margin-bottom: 8rem;
     font-family: Unica One;
     font-size: 6.4rem;
     font-weight: 400;
@@ -82,18 +83,15 @@
     position: absolute;
     right: 40%;
   }
-
   &__right--bg {
     @include bg;
     top: 5%;
     right: 0%;
   }
-
   &__right {
     flex-basis: 50%;
+    margin-left: -6rem;
     & h3 {
-      font-family: 'Montserrat', sans-serif;
-
       font-size: 3rem;
       font-style: italic;
       font-weight: 700;
@@ -111,8 +109,8 @@
       }
     }
     & figure {
-      width: 100%;
-      height: 85vh;
+      width: 105%;
+      height: 95%;
     }
     & img {
       width: 100%;
