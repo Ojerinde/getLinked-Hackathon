@@ -5,18 +5,21 @@
     <!-- Left -->
     <div class="home__left">
       <div class="home__left--bg"></div>
-
-      <img src="../../assets/icons/star.svg" alt="Start" class="home__white--star" />
+      <figure class="home__white--star">
+        <img src="../../assets/icons/star.svg" alt="Start" />
+      </figure>
       <div class="home__header--1">
         <h1>
           getlinked Te
           <div><span>c</span><img src="../../assets/icons/bulb.svg" alt="Start" /></div>
           h
         </h1>
-        <img src="../../assets/icons/dark-star.svg" alt="Star" class="home__dark--star1" />
+        <figure class="home__dark--star1">
+          <img src="../../assets/icons/dark-star.svg" alt="Star" />
+        </figure>
       </div>
       <div class="home__header--2">
-        <h2>Hackathon <span>1.0</span></h2>
+        <h2>Hackathon<span>1.0</span></h2>
         <img src="../../assets/icons/chain.svg" alt="Chain" />
         <img src="../../assets/icons/fire.svg" alt="Fire" />
       </div>

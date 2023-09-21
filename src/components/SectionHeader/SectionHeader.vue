@@ -22,8 +22,12 @@ defineProps({
 h2 {
   font-size: 3.2rem;
   color: #fff;
-  font-family: Clash Display;
+  font-family: 'Clash Display', sans-serif;
   font-weight: 700;
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+    text-align: center;
+  }
   & span {
     color: #d434fe;
   }

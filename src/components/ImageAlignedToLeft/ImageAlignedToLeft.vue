@@ -2,7 +2,7 @@
 
 <template>
   <section class="left__aligned">
-    <figure>
+    <figure class="left__aligned--left">
       <img src="../../assets/images/imageLeft.png" alt="" />
     </figure>
     <div>
@@ -10,7 +10,9 @@
         heading="Introduction to getlinked"
         span="tech Hackathon 1.0"
       ></section-header>
-      <img src="../../assets/icons/purple-star.svg" alt="" />
+      <figure>
+        <img src="../../assets/icons/purple-star.svg" alt="" />
+      </figure>
       <p>
         Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to
         shape the future. Whether you're a coding genius, a design maverick, or a concept wizard,

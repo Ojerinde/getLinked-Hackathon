@@ -7,17 +7,25 @@
   //   & img {
   //   }
 
-  & nav {
+  &__desktop {
     flex-basis: 100%;
     display: flex;
     justify-content: end;
     align-items: center;
+
+    @media only screen and (max-width: 1024px) {
+      display: hidden;
+      visibility: hidden;
+    }
   }
 
   & ul {
     flex-basis: 45%;
     list-style: none;
     display: flex;
+    @media only screen and (max-width: 1024px) {
+      display: hidden;
+    }
 
     & li {
       padding: 1rem 2rem;
@@ -32,4 +40,37 @@
   }
   //   & button {
   //   }
+
+  &__mobile {
+    flex-basis: 100%;
+    justify-content: end;
+    align-items: center;
+    display: hidden;
+    visibility: hidden;
+
+    @media only screen and (min-width: 1024px) {
+      display: block;
+      visibility: visible;
+    }
+  }
+
+  & ul {
+    flex-basis: 45%;
+    list-style: none;
+    display: flex;
+    @media only screen and (max-width: 1024px) {
+      display: hidden;
+    }
+
+    & li {
+      padding: 1rem 2rem;
+
+      & a {
+        color: $white-color;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 1.6rem;
+      }
+    }
+  }
 }

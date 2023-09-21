@@ -20,7 +20,16 @@ const navigationLinks = [
   <header class="header">
     <img src="../../assets//icons/getlinked.svg" alt="GetLinked Logo" />
 
-    <nav>
+    <nav class="heder__desktop">
+      <ul>
+        <li v-for="(link, index) in navigationLinks" :key="index">
+          <RouterLink :to="`/${link.link}`">{{ link.label }}</RouterLink>
+        </li>
+      </ul>
+      <app-button>Register</app-button>
+    </nav>
+
+    <nav class="heder__mobile">
       <ul>
         <li v-for="(link, index) in navigationLinks" :key="index">
           <RouterLink :to="`/${link.link}`">{{ link.label }}</RouterLink>
