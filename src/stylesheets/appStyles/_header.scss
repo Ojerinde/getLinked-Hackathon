@@ -3,9 +3,17 @@
   border-bottom: $light-line;
   display: flex;
   justify-content: space-between;
-
-  //   & img {
-  //   }
+  @media only screen and (max-width: 1024px) {
+    padding: 3rem;
+  }
+  & figure {
+    width: 17.1rem;
+    height: 6rem;
+    @media only screen and (max-width: 1024px) {
+      width: 7.2rem;
+      height: 3rem;
+    }
+  }
 
   &__desktop {
     flex-basis: 100%;
@@ -14,8 +22,7 @@
     align-items: center;
 
     @media only screen and (max-width: 1024px) {
-      display: hidden;
-      visibility: hidden;
+      display: none;
     }
   }
 
@@ -24,7 +31,7 @@
     list-style: none;
     display: flex;
     @media only screen and (max-width: 1024px) {
-      display: hidden;
+      display: none;
     }
 
     & li {
@@ -42,34 +49,36 @@
   //   }
 
   &__mobile {
-    flex-basis: 100%;
-    justify-content: end;
-    align-items: center;
-    display: hidden;
-    visibility: hidden;
-
-    @media only screen and (min-width: 1024px) {
-      display: block;
-      visibility: visible;
-    }
-  }
-
-  & ul {
-    flex-basis: 45%;
-    list-style: none;
     display: flex;
-    @media only screen and (max-width: 1024px) {
-      display: hidden;
+
+    @media only screen and (min-width: 1023px) {
+      display: none;
     }
 
-    & li {
-      padding: 1rem 2rem;
+    & nav {
+      width: 100%;
+      border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
 
-      & a {
-        color: $white-color;
-        text-decoration: none;
-        font-weight: 400;
-        font-size: 1.6rem;
+      & ul {
+        border: 1px solid green;
+        list-style: none;
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+
+        & li {
+          & a {
+            padding: 0;
+            color: $white-color;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1.6rem;
+          }
+        }
       }
     }
   }

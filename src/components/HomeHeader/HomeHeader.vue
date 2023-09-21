@@ -11,7 +11,10 @@
       <div class="home__header--1">
         <h1>
           getlinked Te
-          <div><span>c</span><img src="../../assets/icons/bulb.svg" alt="Start" /></div>
+          <div>
+            <span>c</span>
+            <figure><img src="../../assets/icons/bulb.svg" alt="Start" /></figure>
+          </div>
           h
         </h1>
         <figure class="home__dark--star1">
@@ -20,8 +23,12 @@
       </div>
       <div class="home__header--2">
         <h2>Hackathon<span>1.0</span></h2>
-        <img src="../../assets/icons/chain.svg" alt="Chain" />
-        <img src="../../assets/icons/fire.svg" alt="Fire" />
+        <figure>
+          <img src="../../assets/icons/chain.svg" alt="Chain" />
+        </figure>
+        <figure>
+          <img src="../../assets/icons/fire.svg" alt="Fire" />
+        </figure>
       </div>
       <p class="home__paragraph">
         Participate in getlinked tech Hackathon 2023 stand a chance to win a Big prize
@@ -30,9 +37,11 @@
       <app-button>Register</app-button>
 
       <div class="home__timer--box">
-        <img src="../../assets/icons/dark-star.svg" alt="Star" class="home__dark--star2" />
+        <figure class="home__dark--star2">
+          <img src="../../assets/icons/dark-star.svg" alt="Star" />
+        </figure>
+        <div class="home__timer">00<span>H</span> 00<span>M</span> 00<span>S</span></div>
       </div>
-      <div class="home__timer">00<span>H</span> 00<span>M</span> 00<span>S</span></div>
     </div>
     <!-- Right -->
     <div class="home__right">

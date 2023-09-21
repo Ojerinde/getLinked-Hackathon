@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue'
+
 const navigationLinks = [
   { link: 'timeline', label: 'Timeline' },
   {
@@ -14,13 +16,19 @@ const navigationLinks = [
     label: 'Contact'
   }
 ]
+const showMobileNav = ref(false)
+const toggleMobileNav = (bool) => {
+  showMobileNav.value = bool
+}
 </script>
 
 <template>
   <header class="header">
-    <img src="../../assets//icons/getlinked.svg" alt="GetLinked Logo" />
+    <figure>
+      <img src="../../assets/icons/getlinked.svg" alt="GetLinked Logo" />
+    </figure>
 
-    <nav class="heder__desktop">
+    <nav class="header__desktop">
       <ul>
         <li v-for="(link, index) in navigationLinks" :key="index">
           <RouterLink :to="`/${link.link}`">{{ link.label }}</RouterLink>
@@ -29,14 +37,24 @@ const navigationLinks = [
       <app-button>Register</app-button>
     </nav>
 
-    <nav class="heder__mobile">
-      <ul>
-        <li v-for="(link, index) in navigationLinks" :key="index">
-          <RouterLink :to="`/${link.link}`">{{ link.label }}</RouterLink>
-        </li>
-      </ul>
-      <app-button>Register</app-button>
-    </nav>
+    <!-- Mobile Navs -->
+    <div class="header__mobile">
+      <img
+        v-if="!showMobileNav"
+        src="../../assets/icons/hamburger.svg"
+        @click="toggleMobileNav(true)"
+      />
+      <p @click="toggleMobileNav(false)" v-else>close</p>
+
+      <nav v-if="showMobileNav">
+        <ul>
+          <li v-for="(link, index) in navigationLinks" :key="index">
+            <RouterLink :to="`/${link.link}`">{{ link.label }}</RouterLink>
+          </li>
+        </ul>
+        <app-button>Register</app-button>
+      </nav>
+    </div>
   </header>
 </template>
 
