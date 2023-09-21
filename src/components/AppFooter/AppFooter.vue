@@ -80,6 +80,9 @@ const navigationLinks = [
         <figure class="footer__right--star">
           <img src="../../assets//icons/star.svg" />
         </figure>
+        <figure class="footer__right--star2">
+          <img src="../../assets//icons/pink-star.svg" />
+        </figure>
         <!-- Stars end -->
         <h2>Contact Us</h2>
         <ul>

@@ -8,6 +8,7 @@
   position: relative;
 
   @media only screen and (max-width: 1024px) {
+    padding: 8rem 3rem;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -19,6 +20,10 @@
     left: -2%;
     width: 55rem;
     height: 55rem;
+    @media only screen and (max-width: 1024px) {
+      bottom: 55%;
+      left: -20%;
+    }
   }
   &--bg2 {
     @include bg;
@@ -26,6 +31,10 @@
     right: -5%;
     width: 60rem;
     height: 60rem;
+    @media only screen and (max-width: 1024px) {
+      top: 70%;
+      right: -35%;
+    }
   }
   & figure {
     flex-basis: 50%;

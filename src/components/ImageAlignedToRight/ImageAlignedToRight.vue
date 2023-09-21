@@ -5,7 +5,9 @@
     <p class="right__aligned--bg1"></p>
     <div>
       <section-header heading="Rules and" span="Guidelines"></section-header>
-      <img src="../../assets/icons/purple-star.svg" alt="" />
+      <figure>
+        <img src="../../assets/icons/purple-star.svg" alt="" />
+      </figure>
       <p>
         Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to
         shape the future. Whether you're a coding genius, a design maverick, or a concept wizard,

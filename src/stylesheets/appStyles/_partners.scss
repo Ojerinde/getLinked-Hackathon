@@ -2,6 +2,9 @@
   padding: 8rem;
   color: $white-color;
   border-bottom: $light-line;
+  @media only screen and (max-width: 1024px) {
+    padding: 8rem 3rem;
+  }
 
   &__header {
     text-align: center;
@@ -19,6 +22,9 @@
       font-size: 1.4rem;
       font-weight: 400;
       line-height: 2.4rem;
+      @media only screen and (max-width: 1024px) {
+        width: 80%;
+      }
     }
   }
   &__box {
@@ -27,11 +33,26 @@
     border: 1px solid $pink-color;
     padding: 8rem;
     position: relative;
+    @media only screen and (max-width: 1024px) {
+      padding: 2rem;
+    }
 
     &--star {
       position: absolute;
       top: -10%;
       left: 10%;
+      width: 3rem;
+      height: 3.6rem;
+      @media only screen and (max-width: 1024px) {
+        width: 0.8rem;
+        height: 1rem;
+        top: 0%;
+        left: 10%;
+      }
+      & img {
+        width: 100%;
+        height: 100%;
+      }
     }
     &--bg1 {
       @include bg;
@@ -39,6 +60,12 @@
       left: -25%;
       width: 60rem;
       height: 60rem;
+      @media only screen and (max-width: 1024px) {
+        top: -55%;
+        left: -40%;
+        width: 35rem;
+        height: 35rem;
+      }
     }
 
     &--bg2 {
@@ -47,6 +74,10 @@
       left: 75%;
       width: 60rem;
       height: 60rem;
+      @media only screen and (max-width: 1024px) {
+        width: 35rem;
+        height: 35rem;
+      }
     }
 
     & ul {
@@ -55,6 +86,9 @@
       grid-template-columns: repeat(3, 1fr);
       place-items: center;
       row-gap: 4rem;
+      @media only screen and (max-width: 1024px) {
+        row-gap: 1rem;
+      }
 
       & li {
         height: 15rem;
@@ -64,6 +98,11 @@
         justify-content: center;
         align-items: center;
         position: relative;
+        @media only screen and (max-width: 1024px) {
+          height: 10rem;
+          padding: 1rem;
+          width: 10rem;
+        }
 
         & img {
           width: 100%;
@@ -76,8 +115,14 @@
       position: absolute;
       top: -20%;
       right: 6%;
-      width: 2rem;
-      height: 2rem;
+      width: 2.1rem;
+      height: 2.5rem;
+      @media only screen and (max-width: 1024px) {
+        top: 54%;
+        right: 16%;
+        width: 0.7rem;
+        height: 0.7rem;
+      }
       & img {
         width: 100%;
         height: 100%;
@@ -88,11 +133,17 @@
       position: absolute;
       bottom: -20%;
       right: 6%;
-
+      width: 2.6rem;
+      height: 3.2rem;
+      @media only screen and (max-width: 1024px) {
+        width: 1rem;
+        height: 1.2rem;
+        bottom: -15%;
+        right: -110%;
+      }
       & img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
       }
     }
     &--bottom {
@@ -105,6 +156,9 @@
       bottom: -16%;
       transform: translate(-50%, -50%);
       left: 50%;
+      @media only screen and (max-width: 1024px) {
+        height: 2px;
+      }
     }
     &--right {
       position: absolute;
@@ -116,6 +170,9 @@
       top: 50%;
       right: -13%;
       transform: translate(-50%, -50%);
+      @media only screen and (max-width: 1024px) {
+        width: 2px;
+      }
     }
   }
 }

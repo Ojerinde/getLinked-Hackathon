@@ -26,6 +26,8 @@ h2 {
   font-weight: 700;
   @media only screen and (max-width: 1024px) {
     width: 100%;
+    font-size: 2rem;
+    line-height: 2.66rem;
     text-align: center;
   }
   & span {

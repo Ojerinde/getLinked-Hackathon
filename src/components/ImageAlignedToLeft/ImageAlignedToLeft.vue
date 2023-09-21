@@ -10,7 +10,7 @@
         heading="Introduction to getlinked"
         span="tech Hackathon 1.0"
       ></section-header>
-      <figure>
+      <figure class="left_aligned--star">
         <img src="../../assets/icons/purple-star.svg" alt="" />
       </figure>
       <p>

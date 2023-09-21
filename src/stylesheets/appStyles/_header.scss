@@ -57,14 +57,12 @@
 
     & nav {
       width: 100%;
-      border: 1px solid red;
       display: flex;
       flex-direction: column;
       justify-content: left;
       align-items: flex-start;
 
       & ul {
-        border: 1px solid green;
         list-style: none;
         display: flex;
         justify-content: left;
