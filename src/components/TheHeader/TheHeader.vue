@@ -9,10 +9,6 @@ const buttonClass = computed(() => {
   return route.path !== '/register' ? 'header__button' : 'header__button--active'
 })
 
-const navigateToRegister = () => {
-  router.push('/register')
-}
-
 const navigationLinks = [
   { link: 'timeline', label: 'Timeline' },
   {
@@ -32,6 +28,11 @@ const navigationLinks = [
 const showMobileNav = ref(false)
 const toggleMobileNav = (bool) => {
   showMobileNav.value = bool
+}
+
+const navigateToRegister = () => {
+  toggleMobileNav(false)
+  router.push('/register')
 }
 </script>
 <template>
