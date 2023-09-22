@@ -18,5 +18,6 @@ html {
 body {
   background-color: #150e28;
   font-family: 'Montserrat', sans-serif;
+  border: 1px solid red;
   overflow-x: hidden;
 }
