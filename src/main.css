@@ -18,7 +18,7 @@ html {
 body {
   background-color: #150e28;
   font-family: 'Montserrat', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .router-link-exact-active {
