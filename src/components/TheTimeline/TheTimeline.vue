@@ -1,7 +1,7 @@
 <script setup>
 import LeftTimeline from './LeftTimeline.vue'
-import MobileTimeline from './MobileTimeline.vue'
 import OtherSideTimeline from './OtherSideTimeline.vue'
+import MobileTimeline from './MobileTimeline.vue'
 const lists = [
   {
     heading: 'Hackathon Announcement',
@@ -73,7 +73,14 @@ const lists = [
     </ul>
     <!-- Mobile -->
     <div class="timeline__mobile">
-      <mobile-timeline></mobile-timeline>
+      <mobile-timeline
+        v-for="list in lists"
+        :key="list.id"
+        :heading="list.heading"
+        :description="list.description"
+        :date="list.date"
+        :step="list.id"
+      ></mobile-timeline>
     </div>
   </section>
 </template>

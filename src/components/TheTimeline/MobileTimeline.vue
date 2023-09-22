@@ -1,7 +1,28 @@
+<script setup>
+defineProps({
+  heading: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  step: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: String,
+    required: true
+  }
+})
+</script>
+
 <template>
   <div class="mTimeline">
     <div class="mTimeline__box--2">
-      <p :class="{ 'mTimeline__border--lg': step === 1, 'mTimeline__border--sm': step !== 1 }"></p>
+      <p class="mTimeline__border"></p>
       <p class="mTimeline__step">{{ step }}</p>
     </div>
     <div>
@@ -16,7 +37,5 @@
     </div>
   </div>
 </template>
-
-<script setup></script>
 
 <style scoped="true"></style>

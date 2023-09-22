@@ -62,7 +62,11 @@ const toggleMobileNav = (bool) => {
             <img src="../../assets/icons/close.svg" />
           </figure>
           <ul>
-            <li v-for="(link, index) in navigationLinks" :key="index">
+            <li
+              v-for="(link, index) in navigationLinks"
+              :key="index"
+              @click="toggleMobileNav(false)"
+            >
               <RouterLink :to="`/${link.link}`">{{ link.label }}</RouterLink>
             </li>
           </ul>
