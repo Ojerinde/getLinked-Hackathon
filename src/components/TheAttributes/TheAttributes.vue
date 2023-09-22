@@ -41,7 +41,7 @@ const lists = [
           {{ list.title }}: <span>{{ list.description }}</span>
         </li>
       </ul>
-      <app-button>Read More</app-button>
+      <app-button class="attributes__button">Read More</app-button>
     </div>
     <p class="attributes--bg2"></p>
   </section>

@@ -50,6 +50,9 @@
         align-items: center;
         padding-bottom: 1.5rem;
         border-bottom: $dark-line;
+        @media only screen and (max-width: 1024px) {
+          align-items: baseline;
+        }
 
         & span {
           @media only screen and (max-width: 1024px) {

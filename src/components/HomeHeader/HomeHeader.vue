@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const navigateToRegister = () => {
+  router.push('/register')
+}
+</script>
 
 <template>
   <section class="home">
@@ -34,7 +42,7 @@
         Participate in getlinked tech Hackathon 2023 stand a chance to win a Big prize
       </p>
 
-      <app-button>Register</app-button>
+      <app-button class="home__button" @onClick="navigateToRegister">Register</app-button>
 
       <div class="home__timer--box">
         <figure class="home__dark--star2">

@@ -157,6 +157,29 @@
   &__button {
     width: 100%;
     text-align: center;
+
+    & button {
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-family: 'Montserrat', sans-serif;
+      color: $white-color;
+      background: $primary-color;
+      width: 17.2rem;
+      height: 5.3rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background: linear-gradient(270deg, #fe34b9 0%, #903aff 100%);
+      }
+      @media only screen and (max-width: 1024px) {
+        width: 15.2rem;
+        height: 4.6837rem;
+        font-size: 1.4rem;
+      }
+    }
   }
 
   &__right {

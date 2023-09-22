@@ -1,5 +1,17 @@
 <script setup>
-// import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
+const route = useRoute()
+const router = useRouter()
+
+const buttonClass = computed(() => {
+  return route.path !== '/register' ? 'header__button' : 'header__button--active'
+})
+
+const navigateToRegister = () => {
+  router.push('/register')
+}
 
 const navigationLinks = [
   { link: 'timeline', label: 'Timeline' },
@@ -16,47 +28,47 @@ const navigationLinks = [
     label: 'Contact'
   }
 ]
-// const showMobileNav = ref(false)
-// const toggleMobileNav = (bool) => {
-//   showMobileNav.value = bool
-// }
-</script>
 
+const showMobileNav = ref(false)
+const toggleMobileNav = (bool) => {
+  showMobileNav.value = bool
+}
+</script>
 <template>
   <header class="header">
-    <figure>
-      <img src="../../assets/icons/getlinked.svg" alt="GetLinked Logo" />
-    </figure>
-
     <nav class="header__desktop">
+      <figure @click="$router.push('/')">
+        <img src="../../assets/icons/getlinked.svg" alt="GetLinked Logo" />
+      </figure>
       <ul>
-        <li v-for="(link, index) in navigationLinks" :key="index">
-          <RouterLink :to="`/${link.link}`">{{ link.label }}</RouterLink>
-        </li>
+        <RouterLink v-for="(link, index) in navigationLinks" :key="index" :to="`/${link.link}`">{{
+          link.label
+        }}</RouterLink>
       </ul>
-      <app-button>Register</app-button>
+      <app-button :class="buttonClass" @click="navigateToRegister">Register</app-button>
     </nav>
 
     <!-- Mobile Navs -->
     <div class="header__mobile">
-      <img src="../../assets/icons/hamburger.svg" />
-      <!-- <img
-        v-if="!showMobileNav"
-        src="../../assets/icons/hamburger.svg"
-        @click="toggleMobileNav(true)"
-      /> -->
-      <!-- <p @click="toggleMobileNav(false)" v-else>close</p>
-
-      <nav v-if="showMobileNav">
-        <ul>
-          <li v-for="(link, index) in navigationLinks" :key="index">
-            <RouterLink :to="`/${link.link}`">{{ link.label }}</RouterLink>
-          </li>
-        </ul>
-        <app-button>Register</app-button> -->
-      <!-- </nav> -->
+      <figure @click="$router.push('/')">
+        <img src="../../assets/icons/getlinked.svg" alt="GetLinked Logo" />
+      </figure>
+      <figure @click="toggleMobileNav(true)">
+        <img src="../../assets/icons/hamburger.svg" />
+      </figure>
+      <div v-if="showMobileNav" class="header__mobile--overlay">
+        <nav>
+          <figure @click="toggleMobileNav(false)">
+            <img src="../../assets/icons/close.svg" />
+          </figure>
+          <ul>
+            <li v-for="(link, index) in navigationLinks" :key="index">
+              <RouterLink :to="`/${link.link}`">{{ link.label }}</RouterLink>
+            </li>
+          </ul>
+          <app-button :class="buttonClass" @click="navigateToRegister">Register</app-button>
+        </nav>
+      </div>
     </div>
   </header>
 </template>
-
-<style lang="scss" scoped></style>

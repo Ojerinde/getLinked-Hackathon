@@ -1,8 +1,8 @@
 @mixin bg {
   content: '';
   position: absolute;
-  background: radial-gradient(circle, rgba(143, 58, 255, 0.4) 0%, transparent 70%);
-  z-index: 10;
+  background: radial-gradient(circle, rgba(143, 58, 255, 0.3) 0%, transparent 70%);
+  z-index: -10;
   height: 50rem;
   width: 50rem;
   @media only screen and (max-width: 1024px) {

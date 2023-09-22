@@ -1,5 +1,11 @@
 <template>
-  <button class="app__button"><slot /></button>
+  <button @click="triggerClickFunc"><slot /></button>
 </template>
 
-<script setup></script>
+<script setup>
+const emits = defineEmits(['onClick'])
+
+const triggerClickFunc = () => {
+  emits('onClick')
+}
+</script>
