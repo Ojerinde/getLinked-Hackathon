@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    overflow-x: hidden;
   }
 
   &__left {
@@ -24,9 +25,11 @@
       left: -5%;
       width: 60rem;
       height: 60rem;
+
       @media only screen and (max-width: 1024px) {
         top: -2%;
         left: -15%;
+        width: 30rem;
       }
     }
   }
