@@ -1,5 +1,6 @@
 <script setup>
 import LeftTimeline from './LeftTimeline.vue'
+import MobileTimeline from './MobileTimeline.vue'
 import OtherSideTimeline from './OtherSideTimeline.vue'
 const lists = [
   {
@@ -70,5 +71,9 @@ const lists = [
         ></left-timeline>
       </template>
     </ul>
+    <!-- Mobile -->
+    <div class="timeline__mobile">
+      <mobile-timeline></mobile-timeline>
+    </div>
   </section>
 </template>

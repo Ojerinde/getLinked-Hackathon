@@ -1,25 +1,25 @@
 <script setup>
-  defineProps({
-    heading: {
-      type: String,
-      required: true
-    },
-    description: {
-      type: String,
-      required: true
-    },
-    step: {
-      type: String,
-      required: true
-    },
-    date: {
-      type: String,
-      required: true
-    }
-  })
+defineProps({
+  heading: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  step: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: String,
+    required: true
+  }
+})
 </script>
 <template>
-  <div class="rTimeline">
+  <div class="rTimeline rTimeline__desktop">
     <img v-if="step === 1" src="../../assets/icons/purple-star.svg" alt="" />
     <div class="rTimeline__box--1">
       <h2 class="rTimeline__heading">{{ heading }}</h2>

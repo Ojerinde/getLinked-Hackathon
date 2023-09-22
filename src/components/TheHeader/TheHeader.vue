@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+// import { ref } from 'vue'
 
 const navigationLinks = [
   { link: 'timeline', label: 'Timeline' },
@@ -16,10 +16,10 @@ const navigationLinks = [
     label: 'Contact'
   }
 ]
-const showMobileNav = ref(false)
-const toggleMobileNav = (bool) => {
-  showMobileNav.value = bool
-}
+// const showMobileNav = ref(false)
+// const toggleMobileNav = (bool) => {
+//   showMobileNav.value = bool
+// }
 </script>
 
 <template>
@@ -39,12 +39,13 @@ const toggleMobileNav = (bool) => {
 
     <!-- Mobile Navs -->
     <div class="header__mobile">
-      <img
+      <img src="../../assets/icons/hamburger.svg" />
+      <!-- <img
         v-if="!showMobileNav"
         src="../../assets/icons/hamburger.svg"
         @click="toggleMobileNav(true)"
-      />
-      <p @click="toggleMobileNav(false)" v-else>close</p>
+      /> -->
+      <!-- <p @click="toggleMobileNav(false)" v-else>close</p>
 
       <nav v-if="showMobileNav">
         <ul>
@@ -52,8 +53,8 @@ const toggleMobileNav = (bool) => {
             <RouterLink :to="`/${link.link}`">{{ link.label }}</RouterLink>
           </li>
         </ul>
-        <app-button>Register</app-button>
-      </nav>
+        <app-button>Register</app-button> -->
+      <!-- </nav> -->
     </div>
   </header>
 </template>

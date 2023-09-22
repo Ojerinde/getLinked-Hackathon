@@ -4,7 +4,7 @@ import ImageAlignedToLeft from '../../components/ImageAlignedToLeft/ImageAligned
 import ImageAlignedToRight from '../../components/ImageAlignedToRight/ImageAlignedToRight.vue'
 import TheAttributes from '../../components/TheAttributes/TheAttributes.vue'
 import TheFAQ from '../../components/TheFAQs/TheFAQs.vue'
-// import TheTimeline from '../../components/TheTimeline/TheTimeline.vue'
+import TheTimeline from '../../components/TheTimeline/TheTimeline.vue'
 import ThePrizes from '../../components/ThePrizes/ThePrizes.vue'
 import AppPartners from '../../components/AppPartners/AppPartners.vue'
 import AppTerms from '../../components/AppTerms/AppTerms.vue'
@@ -18,7 +18,7 @@ import AppFooter from '../../components/AppFooter/AppFooter.vue'
     <image-aligned-to-right></image-aligned-to-right>
     <the-attributes></the-attributes>
     <TheFAQ></TheFAQ>
-    <!-- <the-timeline></the-timeline> -->
+    <the-timeline></the-timeline>
     <the-prizes></the-prizes>
     <app-partners></app-partners>
     <app-terms></app-terms>
