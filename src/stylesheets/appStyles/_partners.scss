@@ -35,7 +35,7 @@
     position: relative;
     @media only screen and (max-width: 1024px) {
       padding: 2rem;
-      width: 80%;
+      width: 85%;
       margin: 0 auto;
     }
 
@@ -159,6 +159,7 @@
       transform: translate(-50%, -50%);
       left: 50%;
       @media only screen and (max-width: 1024px) {
+        bottom: -15%;
         height: 2px;
       }
     }
@@ -173,6 +174,7 @@
       right: -13%;
       transform: translate(-50%, -50%);
       @media only screen and (max-width: 1024px) {
+        right: -4%;
         width: 2px;
       }
     }
