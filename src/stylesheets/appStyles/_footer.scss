@@ -146,6 +146,7 @@
   &__right {
     flex-basis: 15%;
     position: relative;
+
     @media only screen and (max-width: 1024px) {
       margin-top: 6.4rem;
     }

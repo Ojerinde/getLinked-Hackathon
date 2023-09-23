@@ -96,8 +96,10 @@ watch(isModalOpen, (newValue) => {
     </div></app-modal
   >
   <div class="register">
+    <div class="register--bg"></div>
     <h3>Register</h3>
     <div class="register__left">
+      <div class="register__left--bg"></div>
       <!-- Stars Start -->
       <figure class="register__pink--star">
         <img src="../../assets/icons/pink-star.svg" alt="Pink Star" />
@@ -113,6 +115,7 @@ watch(isModalOpen, (newValue) => {
       <img src="../../assets/images/register.png" alt="Register officer img" />
     </div>
     <div class="register__right">
+      <div class="register__right--bg"></div>
       <!-- Stars Start -->
       <figure class="register__dark2--star">
         <img src="../../assets/icons/dark-star.svg" alt="Dark Star" />

@@ -1,4 +1,17 @@
 .register {
+  position: relative;
+  &--bg {
+    display: none;
+    @media only screen and (max-width: 50em) {
+      display: block;
+      @include bg;
+      top: -17%;
+      left: -30%;
+      height: 81% !important;
+      width: 81% !important;
+    }
+  }
+
   & > h3 {
     padding: 2rem 8rem;
     padding-bottom: 0;
@@ -16,21 +29,37 @@
     flex-direction: column;
   }
   &__left {
-    color: $white-color;
-    flex-basis: 40%;
-    padding: 3rem;
-    text-align: center;
     position: relative;
+    &--bg {
+      @include bg;
+      top: -17%;
+      left: -30%;
+      height: 65rem;
+      width: 65rem;
 
+      @media only screen and (max-width: 64em) {
+        top: 11%;
+        left: -26%;
+      }
+      @media screen and (max-width: 50em) {
+        display: none;
+      }
+    }
+    color: #fff;
+    flex-basis: 45%;
+    padding: 3rem;
+    padding-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @media screen and (max-width: 50em) {
       background: none;
-      padding: 0;
+      padding: 3rem;
     }
-
     & > img {
       width: 100%;
-      height: 100vh;
-      object-fit: cover;
+      transform: scale(1.2);
+
       @media screen and (max-width: 50em) {
         width: 30rem;
         height: 30rem;
@@ -39,6 +68,16 @@
   }
   &__right {
     position: relative;
+    &--bg {
+      @include bg;
+      bottom: -10%;
+      right: -7%;
+      height: 55rem;
+      width: 55rem;
+      @media screen and (max-width: 50em) {
+        display: none;
+      }
+    }
     padding: 7rem 8rem 8rem 0;
     @media screen and (max-width: 75em) {
       padding: 7rem 4rem 8rem 0;
@@ -47,10 +86,15 @@
       padding: 7rem 2rem 8rem 0;
     }
     @media screen and (max-width: 50em) {
-      padding: 0rem 2rem 8rem 2rem;
+      padding: 0rem 6rem 8rem 6rem;
       background: none;
     }
-    flex-basis: 60%;
+    @media screen and (max-width: 31.25em) {
+      padding: 0rem 3rem 8rem 3rem;
+      background: none;
+    }
+
+    flex-basis: 55%;
   }
   &__form {
     padding: 4rem 6rem;
@@ -228,7 +272,7 @@
     position: absolute;
     width: 2.3rem;
     height: 2.8rem;
-    bottom: 32%;
+    bottom: 20%;
     right: 8%;
 
     @media only screen and (max-width: 37.5em) {
@@ -248,8 +292,8 @@
     position: absolute;
     width: 2.6rem;
     height: 3.2rem;
-    bottom: 18%;
-    left: 17%;
+    bottom: 5%;
+    left: 12%;
     @media only screen and (max-width: 37.5em) {
       display: none;
     }
