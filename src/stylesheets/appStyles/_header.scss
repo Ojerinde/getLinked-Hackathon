@@ -86,17 +86,35 @@
   }
 
   &__button--active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     font-size: 1.6rem;
     font-weight: 400;
     color: $white-color;
-    border-radius: 0.4rem;
-    background: transparent;
-    border: 2px solid #9a39ff;
     width: 17.2rem;
     height: 5.3rem;
-    border-radius: 4px;
+    $border: 2px;
+    border: solid $border transparent;
+    border-radius: 0.4rem;
+    background: $secondary-color;
+    background-clip: padding-box;
     cursor: pointer;
     transition: all 0.3s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -$border;
+      border-radius: inherit;
+      background: $primary-color;
+    }
 
     &:hover {
       color: #9a39ff;
@@ -120,10 +138,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
       z-index: 1000;
       border-radius: 0.8rem;
       border: 0.5px solid rgba(255, 255, 255, 0.04);
@@ -131,13 +145,15 @@
       backdrop-filter: blur(30px);
 
       & nav {
-        padding: 3rem 2rem;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+
         & figure {
-          position: absolute;
-          top: 6%;
-          right: 10%;
+          align-self: flex-end;
           border-radius: 50%;
           padding: 0.5rem;
+          margin-bottom: 6rem;
           width: 3rem;
           height: 3rem;
           border: 1px solid #903aff;
@@ -153,11 +169,13 @@
 
         & ul {
           width: 100%;
+
           list-style: none;
           display: flex;
           justify-content: flex-start;
           flex-direction: column;
           margin-bottom: 1rem;
+          margin-left: -1rem;
 
           & li {
             margin: 1rem 0;

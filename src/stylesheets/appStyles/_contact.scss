@@ -1,0 +1,80 @@
+.contact {
+  //   @include bg;
+  display: flex;
+  &__left {
+    color: #fff;
+    flex-basis: 40%;
+    padding: 10rem 0 10rem 16rem;
+    & > *:not(:last-child) {
+      margin-top: 1.5rem;
+      font-size: 1.6rem;
+    }
+    & > h3 {
+      font-weight: 600;
+      font-family: 'Clash Display';
+      font-size: 3.2rem !important;
+      color: $pink-color;
+    }
+  }
+  &__social {
+    margin-top: 2rem;
+    & > p {
+      color: $pink-color;
+    }
+    font-size: 1.6rem;
+  }
+  &__icons {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    & > span:not(:last-child) {
+      margin-right: 1.2rem;
+    }
+  }
+  &__right {
+    padding: 7rem 16rem 7rem 0;
+    flex-basis: 60%;
+  }
+  &__form {
+    background-color: rgba(#fff, 0.05);
+    border-radius: 1.2rem;
+    padding: 4rem;
+    & > h3 {
+      font-weight: 600;
+      font-family: 'Clash Display';
+      font-size: 2rem;
+      color: $pink-color;
+      margin-bottom: 1rem;
+    }
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    & > input,
+    textarea {
+      padding: 1rem;
+      padding-left: 2rem;
+      margin-top: 2rem;
+      background-color: transparent;
+      outline: none;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      //   box-shadow: 0px 4px 4px 0px #00000040;
+      &::placeholder {
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.95rem;
+        font-family: 'Montserrat';
+      }
+    }
+    & > textarea {
+      min-height: 11.9rem;
+      resize: none;
+    }
+  }
+  &__cta {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+}

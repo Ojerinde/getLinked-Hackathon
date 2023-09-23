@@ -1,5 +1,167 @@
-<template>
-  <div>Add you Register component here</div>
-</template>
+<script setup>
+import RequestError from '../../components/RequestError/RequestError.vue'
+import { reactive } from 'vue'
+import useFetch from '../../composables/fetch'
 
-<script setup lang="ts"></script>
+const { isLoading, hasError, errorMessage, fetchRequest: registerUserRequest } = useFetch()
+
+const formFields = reactive({
+  teamName: '',
+  email: '',
+  phone: '',
+  category: null,
+  groupSize: null,
+  topic: '',
+  agreeToTerms: null
+})
+
+// const formFields = reactive({
+//   teamName: 'Joel',
+//   email: 'Joelojerinde@gmail.com',
+//   phone: '08143368703',
+//   category: 1,
+//   groupSize: 2,
+//   topic: 'Hackathon',
+//   agreeToTerms: true
+// })
+
+const getRequestResponse = (data) => {
+  console.log(data)
+}
+
+const onSubmitHandler = () => {
+  if (
+    !formFields.teamName ||
+    !formFields.agreeToTerms ||
+    !formFields.category ||
+    !formFields.email ||
+    !formFields.groupSize ||
+    !formFields.phone ||
+    !formFields.topic
+  )
+    return
+
+  // Sending the creation request
+  registerUserRequest(
+    {
+      url: `${import.meta.env.VITE_BASE_URL}/hackathon/registration`,
+      method: 'POST',
+      body: {
+        email: formFields.email,
+        phone_number: formFields.phone,
+        team_name: formFields.teamName,
+        group_size: +formFields.groupSize,
+        project_topic: formFields.topic,
+        category: +formFields.category,
+        privacy_poclicy_accepted: formFields.agreeToTerms
+      },
+      errorMessage: 'Oops! It seems your message got lost in the virtual Bermuda Triangle'
+    },
+    getRequestResponse
+  )
+}
+</script>
+
+<template>
+  <div class="register">
+    <div class="register__left">
+      <img src="../../assets/images/register.png" alt="Register officer img" />
+    </div>
+    <div class="register__right">
+      <div class="register__form">
+        <h3>Register</h3>
+        <p class="sub-legend">Be part of this movement</p>
+        <h4>CREATE YOUR ACCOUNT</h4>
+        <div class="register__info">
+          <div class="register__fields">
+            <div class="register__group">
+              <label for="teamName">Team's Name</label>
+              <input
+                id="teamName"
+                type="text"
+                name="teamName"
+                placeholder="Enter the name of your group"
+                v-model="formFields.teamName"
+              />
+            </div>
+            <div class="register__group">
+              <label for="phone">Phone</label>
+
+              <input
+                id="phone"
+                type="text"
+                name="phone"
+                placeholder="Enter your phone number"
+                v-model="formFields.phone"
+              />
+            </div>
+          </div>
+          <div class="register__fields">
+            <div class="register__group">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Enter your email address"
+                v-model="formFields.email"
+              />
+            </div>
+            <div class="register__group">
+              <label for="projectTopic">Project Topic</label>
+              <input
+                id="projectTopic"
+                type="text"
+                name="projectTopic"
+                placeholder="What is your group project topic"
+                v-model="formFields.topic"
+              />
+            </div>
+          </div>
+          <div class="register__fields">
+            <div class="register__group">
+              <label for="category">Category</label>
+
+              <select
+                name="category"
+                id="category"
+                placeholder="Select your category"
+                v-model="formFields.category"
+              >
+                <option value="Select">Select your category</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div class="register__group">
+              <label for="groupSize">Group Size</label>
+              <select
+                name="groupSize"
+                id="groupSize"
+                placeholder="Select"
+                v-model="formFields.groupSize"
+              >
+                <option value="Select">Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <p class="note">Please review your registration details before submitting</p>
+        <div class="register__cta">
+          <div>
+            <input type="checkbox" name="tac" id="tac" v-model="formFields.agreeToTerms" />
+            <span>I agreed with the event terms and conditions and privacy policy</span>
+          </div>
+          <request-error v-if="!hasError">{{ errorMessage }}</request-error>
+          <app-button class="home__button" @onClick="onSubmitHandler"
+            >{{ isLoading ? 'Loading...' : 'Register Now' }}
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

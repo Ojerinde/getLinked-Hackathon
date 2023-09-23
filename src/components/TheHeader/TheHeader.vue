@@ -2,6 +2,8 @@
 import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+const showMobileNav = ref(false)
+
 const route = useRoute()
 const router = useRouter()
 
@@ -25,7 +27,6 @@ const navigationLinks = [
   }
 ]
 
-const showMobileNav = ref(false)
 const toggleMobileNav = (bool) => {
   showMobileNav.value = bool
 }
@@ -37,6 +38,7 @@ const navigateToRegister = () => {
 </script>
 <template>
   <header class="header">
+    <!-- Desktop Nav -->
     <nav class="header__desktop">
       <figure @click="$router.push('/')">
         <img src="../../assets/icons/getlinked.svg" alt="GetLinked Logo" />
