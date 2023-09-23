@@ -86,7 +86,7 @@
       padding: 7rem 2rem 8rem 0;
     }
     @media screen and (max-width: 50em) {
-      padding: 0rem 6rem 8rem 6rem;
+      padding: 0rem 3rem 8rem 3rem;
       background: none;
     }
     @media screen and (max-width: 31.25em) {
@@ -100,12 +100,12 @@
     padding: 4rem 6rem;
     background-color: rgba($white-color, 0.05);
     box-shadow: $box-shadow;
+    border-radius: 1.2rem;
 
     @media screen and (max-width: 50em) {
       background: none;
-      padding-top: 0;
+      padding: 0 2.5rem 4rem;
     }
-    border-radius: 1.2rem;
     & > h3 {
       font-weight: 600;
       font-family: 'Clash Display', sans-serif;
