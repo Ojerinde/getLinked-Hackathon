@@ -253,6 +253,20 @@
         margin-left: 0rem;
         position: absolute;
         top: 3%;
+        left: 33%;
+      }
+
+      @media only screen and (max-width: 900px) {
+        left: 30%;
+      }
+
+      @media only screen and (max-width: 768px) {
+        left: 28%;
+      }
+      @media only screen and (max-width: 600px) {
+        left: 20%;
+      }
+      @media only screen and (max-width: 500px) {
         left: 10%;
       }
 

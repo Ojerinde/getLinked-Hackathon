@@ -85,10 +85,11 @@
       right: 110%;
       width: 1.5rem;
       height: 1.8rem;
+
       @media only screen and (max-width: 1024px) {
         width: 0.7rem;
         height: 0.8rem;
-        bottom: -100%;
+        bottom: -130%;
         right: 60%;
       }
       & img {

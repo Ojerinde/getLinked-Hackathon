@@ -3,7 +3,10 @@ import RequestError from '../../components/RequestError/RequestError.vue'
 import AppModal from '../../components/AppModal/AppModal.vue'
 
 import { ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import useFetch from '../../composables/fetch'
+
+const router = useRouter()
 
 const { isLoading, hasError, errorMessage, fetchRequest: contactUsRequest } = useFetch()
 const isModalOpen = ref(false)
@@ -55,6 +58,9 @@ watch(isModalOpen, (newValue) => {
     window.addEventListener('keydown', closeOnEsc)
   }
 })
+const navigateBack = () => {
+  router.push('/')
+}
 </script>
 
 <template>
@@ -83,7 +89,7 @@ watch(isModalOpen, (newValue) => {
     </figure>
     <!-- Stars  END-->
 
-    <button type="button" class="contact__back" @onClick="$router.push('/')">
+    <button type="button" class="contact__back" @click="navigateBack">
       <img src="../../assets/icons/arrow-left.svg" alt="back arrow" />
     </button>
     <div class="contact__left">
