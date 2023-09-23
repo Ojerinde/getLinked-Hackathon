@@ -1,9 +1,13 @@
 <script setup>
 import RequestError from '../../components/RequestError/RequestError.vue'
-import { reactive } from 'vue'
+import AppModal from '../../components/AppModal/AppModal.vue'
+
+import { reactive, ref, watch } from 'vue'
 import useFetch from '../../composables/fetch'
 
 const { isLoading, hasError, errorMessage, fetchRequest: registerUserRequest } = useFetch()
+
+const isModalOpen = ref(false)
 
 const formFields = reactive({
   teamName: '',
@@ -17,15 +21,16 @@ const formFields = reactive({
 
 // const formFields = reactive({
 //   teamName: 'Joel',
-//   email: 'Joelojerinde@gmail.com',
+//   email: 'Joelojerinde1@gmail.com',
 //   phone: '08143368703',
-//   category: 1,
-//   groupSize: 2,
+//   category: '1',
+//   groupSize: '2',
 //   topic: 'Hackathon',
 //   agreeToTerms: true
 // })
 
 const getRequestResponse = (data) => {
+  isModalOpen.value = true
   console.log(data)
 }
 
@@ -55,15 +60,41 @@ const onSubmitHandler = () => {
         category: +formFields.category,
         privacy_poclicy_accepted: formFields.agreeToTerms
       },
-      errorMessage: 'Oops! It seems your message got lost in the virtual Bermuda Triangle'
+      errorMessage: 'Looks like the signup fairy is on vacation, try again later! 🧚‍♂️✨'
     },
     getRequestResponse
   )
 }
+
+const closeModal = () => {
+  isModalOpen.value = false
+}
+
+watch(isModalOpen, (newValue) => {
+  if (newValue) {
+    // Allow closing the modal when the Esc key is pressed
+    const closeOnEsc = (event) => {
+      if (event.key === 'Escape') {
+        closeModal()
+        window.removeEventListener('keydown', closeOnEsc)
+      }
+    }
+    window.addEventListener('keydown', closeOnEsc)
+  }
+})
 </script>
 
 <template>
+  <app-modal v-if="isModalOpen" @close-modal="closeModal"
+    ><div class="modal__content">
+      <img src="../../assets/images/congratulation.png" alt="Congratulations" />
+      <h4>Congratulations<br />you have successfully Registered!</h4>
+      <p>Yes, it was easy and you did it!<br />check your mail box for next step 😜</p>
+      <app-button class="home__button" @onClick="closeModal">Back</app-button>
+    </div></app-modal
+  >
   <div class="register">
+    <h3>Register</h3>
     <div class="register__left">
       <img src="../../assets/images/register.png" alt="Register officer img" />
     </div>
@@ -121,7 +152,6 @@ const onSubmitHandler = () => {
           <div class="register__fields">
             <div class="register__group">
               <label for="category">Category</label>
-
               <select
                 name="category"
                 id="category"
@@ -156,7 +186,7 @@ const onSubmitHandler = () => {
             <input type="checkbox" name="tac" id="tac" v-model="formFields.agreeToTerms" />
             <span>I agreed with the event terms and conditions and privacy policy</span>
           </div>
-          <request-error v-if="!hasError">{{ errorMessage }}</request-error>
+          <request-error v-if="hasError">{{ errorMessage }}</request-error>
           <app-button class="home__button" @onClick="onSubmitHandler"
             >{{ isLoading ? 'Loading...' : 'Register Now' }}
           </app-button>

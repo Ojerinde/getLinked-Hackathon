@@ -3,12 +3,12 @@ import { ref } from 'vue'
 export default function useFetch() {
   let isLoading = ref(false)
   let hasError = ref(false)
-  let errorMessage = ref('')
+  let errorMessage = ref(null)
 
   const fetchRequest = async (requestConfig = {}, getRequestData = () => {}) => {
     isLoading.value = true
-    hasError.value = ref(false)
-    errorMessage.value = ref('')
+    hasError.value = false
+    errorMessage.value = null
 
     try {
       const response = await fetch(requestConfig.url, {
@@ -37,7 +37,7 @@ export default function useFetch() {
 
       setTimeout(() => {
         hasError.value = false
-        errorMessage.value = ''
+        errorMessage.value = null
       }, 5000)
     } finally {
       isLoading.value = false
