@@ -13,8 +13,8 @@ const formFields = reactive({
   teamName: '',
   email: '',
   phone: '',
-  category: null,
-  groupSize: null,
+  category: 'Select your category',
+  groupSize: 'Select',
   topic: '',
   agreeToTerms: null
 })
@@ -42,7 +42,9 @@ const onSubmitHandler = () => {
     !formFields.email ||
     !formFields.groupSize ||
     !formFields.phone ||
-    !formFields.topic
+    !formFields.topic ||
+    formFields.category === 'Select your category' ||
+    formFields.groupSize === 'Select'
   )
     return
 
@@ -96,9 +98,30 @@ watch(isModalOpen, (newValue) => {
   <div class="register">
     <h3>Register</h3>
     <div class="register__left">
+      <!-- Stars Start -->
+      <figure class="register__pink--star">
+        <img src="../../assets/icons/pink-star.svg" alt="Pink Star" />
+      </figure>
+      <figure class="register__purple--star">
+        <img src="../../assets/icons/purple-star.svg" alt="Purple Star" />
+      </figure>
+      <figure class="register__dark1--star">
+        <img src="../../assets/icons/dark-star.svg" alt="Dark Star" />
+      </figure>
+      <!-- Stars End -->
+
       <img src="../../assets/images/register.png" alt="Register officer img" />
     </div>
     <div class="register__right">
+      <!-- Stars Start -->
+      <figure class="register__dark2--star">
+        <img src="../../assets/icons/dark-star.svg" alt="Dark Star" />
+      </figure>
+      <figure class="register__white--star">
+        <img src="../../assets/icons/star.svg" alt="White Star" />
+      </figure>
+      <!-- Stars End -->
+
       <div class="register__form">
         <h3>Register</h3>
         <p class="sub-legend">Be part of this movement</p>
@@ -152,13 +175,8 @@ watch(isModalOpen, (newValue) => {
           <div class="register__fields">
             <div class="register__group">
               <label for="category">Category</label>
-              <select
-                name="category"
-                id="category"
-                placeholder="Select your category"
-                v-model="formFields.category"
-              >
-                <option value="Select">Select your category</option>
+              <select name="category" id="category" v-model="formFields.category">
+                <option value="Select your category" hidden>Select your category</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -166,13 +184,8 @@ watch(isModalOpen, (newValue) => {
             </div>
             <div class="register__group">
               <label for="groupSize">Group Size</label>
-              <select
-                name="groupSize"
-                id="groupSize"
-                placeholder="Select"
-                v-model="formFields.groupSize"
-              >
-                <option value="Select">Select</option>
+              <select name="groupSize" id="groupSize" v-model="formFields.groupSize">
+                <option value="Select" hidden>Select</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
