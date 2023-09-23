@@ -124,6 +124,12 @@
       font-weight: 400;
       color: $white-color;
       margin-bottom: 2rem;
+      & span {
+        display: inline-block;
+        width: 10.1rem;
+        text-align: center;
+        border-bottom: 1px dashed $pink-color;
+      }
     }
     & > h4 {
       font-weight: 400;
@@ -166,6 +172,7 @@
     margin-bottom: 2rem;
   }
   &__group {
+    position: relative;
     flex-basis: 47%;
     display: flex;
     flex-direction: column;
@@ -190,7 +197,7 @@
 
       font-weight: 400;
       line-height: 1.95rem;
-      font-family: 'Montserrat';
+      font-family: 'Montserrat', sans-serif;
       display: inline-block;
       padding: 1rem;
       padding-left: 2rem;
@@ -201,19 +208,28 @@
       border: 1px solid $white-color;
       border-radius: 5px;
 
+      &:focus {
+        border: 1px solid $pink-color;
+      }
+
       &::placeholder {
         color: rgba($white-color, 0.25);
         font: inherit;
       }
     }
+
+    & > svg {
+      position: absolute;
+      display: inline-block;
+      right: 5%;
+      top: 65%;
+      width: 1.05rem;
+      height: 0.6rem;
+    }
+
     & > select {
       appearance: none;
       background: transparent;
-      background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-      background-repeat: no-repeat;
-      background-position-x: 95%;
-      background-position-y: 8px;
-      padding-right: 1rem;
 
       & option {
         color: $pink-color;
@@ -272,7 +288,7 @@
     position: absolute;
     width: 2.3rem;
     height: 2.8rem;
-    bottom: 20%;
+    bottom: 22%;
     right: 8%;
 
     @media only screen and (max-width: 37.5em) {
@@ -341,4 +357,69 @@
       width: 100%;
     }
   }
+}
+
+.container {
+  color: #fff;
+  display: block;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #fff;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: $blue-color;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid $white-color;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

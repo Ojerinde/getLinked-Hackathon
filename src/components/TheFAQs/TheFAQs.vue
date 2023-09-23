@@ -36,6 +36,9 @@ const lists = [
 <template>
   <section class="faqs">
     <div>
+      <figure class="faqs__star">
+        <img src="../../assets/icons/pink-star.svg" />
+      </figure>
       <section-header heading="Frequently Ask" span="Questions"></section-header>
       <p>
         We got answers to the questions that you might want to ask about getlinked Hackathon 1.0

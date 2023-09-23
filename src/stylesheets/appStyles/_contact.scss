@@ -191,6 +191,9 @@
         color: $white-color;
         font: inherit;
       }
+      &:focus {
+        border: 1px solid $pink-color;
+      }
     }
     & > textarea {
       min-height: 11.9rem;

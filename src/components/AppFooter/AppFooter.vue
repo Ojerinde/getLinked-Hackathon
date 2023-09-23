@@ -26,7 +26,7 @@ const navigationLinks = [
           organizations with the aim of showcasing young and talented individuals in the field of
           technology
         </p>
-        <div>Terms of Use <span></span> &nbsp;Privacy Policy</div>
+        <div>Terms of Use&nbsp;&nbsp; <span></span> &nbsp; &nbsp;Privacy Policy</div>
         <!-- Star start -->
         <figure class="footer__left--star">
           <img src="../../assets//icons/star.svg" />
@@ -90,7 +90,11 @@ const navigationLinks = [
           </li>
           <li>
             <img src="../../assets/icons/location.svg" alt="" />
-            <p>27, Alara Street Yaba 100012 Lagos State</p>
+            <p>
+              27, Alara Street<br />
+              Yaba 100012<br />
+              Lagos State
+            </p>
           </li>
         </ul>
       </div>

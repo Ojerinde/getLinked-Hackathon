@@ -16,7 +16,7 @@ const formFields = reactive({
   category: 'Select your category',
   groupSize: 'Select',
   topic: '',
-  agreeToTerms: null
+  agreeToTerms: false
 })
 
 // const formFields = reactive({
@@ -90,7 +90,7 @@ watch(isModalOpen, (newValue) => {
   <app-modal v-if="isModalOpen" @close-modal="closeModal"
     ><div class="modal__content">
       <img src="../../assets/images/congratulation.png" alt="Congratulations" />
-      <h4>Congratulations<br />you have successfully Registered!</h4>
+      <h4>Congratulations,<br />you have successfully Registered!</h4>
       <p>Yes, it was easy and you did it!<br />check your mail box for next step 😜</p>
       <app-button class="home__button" @onClick="closeModal">Back</app-button>
     </div></app-modal
@@ -127,7 +127,9 @@ watch(isModalOpen, (newValue) => {
 
       <div class="register__form">
         <h3>Register</h3>
-        <p class="sub-legend">Be part of this movement</p>
+        <p class="sub-legend">
+          Be part of this movement <span><img src="../../assets/icons/move.svg" alt="Move" /></span>
+        </p>
         <h4>CREATE YOUR ACCOUNT</h4>
         <div class="register__info">
           <div class="register__fields">
@@ -178,6 +180,15 @@ watch(isModalOpen, (newValue) => {
           <div class="register__fields">
             <div class="register__group">
               <label for="category">Category</label>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="9"
+                viewBox="0 0 13 9"
+                fill="none"
+              >
+                <path d="M1 1L6.5 7L11.5 1" stroke="white" stroke-width="2" />
+              </svg>
               <select name="category" id="category" v-model="formFields.category">
                 <option value="Select your category" hidden>Select your category</option>
                 <option value="1">1</option>
@@ -187,6 +198,15 @@ watch(isModalOpen, (newValue) => {
             </div>
             <div class="register__group">
               <label for="groupSize">Group Size</label>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="9"
+                viewBox="0 0 13 9"
+                fill="none"
+              >
+                <path d="M1 1L6.5 7L11.5 1" stroke="white" stroke-width="2" />
+              </svg>
               <select name="groupSize" id="groupSize" v-model="formFields.groupSize">
                 <option value="Select" hidden>Select</option>
                 <option value="1">1</option>
@@ -199,8 +219,11 @@ watch(isModalOpen, (newValue) => {
         <p class="note">Please review your registration details before submitting</p>
         <div class="register__cta">
           <div>
-            <input type="checkbox" name="tac" id="tac" v-model="formFields.agreeToTerms" />
-            <span>I agreed with the event terms and conditions and privacy policy</span>
+            <label class="container"
+              >I agreed with the event terms and conditions and privacy policy
+              <input type="checkbox" name="tac" id="tac" v-model="formFields.agreeToTerms" />
+              <span class="checkmark"></span>
+            </label>
           </div>
           <request-error v-if="hasError">{{ errorMessage }}</request-error>
           <app-button class="home__button" @onClick="onSubmitHandler"

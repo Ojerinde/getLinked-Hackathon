@@ -34,13 +34,10 @@ const closeModal = () => {
   background: rgba(255, 255, 255, 0.01);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   width: 40%;
-  height: 75%;
   margin: 0 auto;
-  overflow: hidden;
 
   @media only screen and (max-width: 1024px) {
     width: 80%;
-    height: 85%;
   }
 }
 </style>
